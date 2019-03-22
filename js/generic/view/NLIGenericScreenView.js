@@ -11,7 +11,7 @@ define( function( require ) {
   const ScreenView = require( 'JOIST/ScreenView' );
   const numberLineIntegers = require( 'NUMBER_LINE_INTEGERS/numberLineIntegers' );
 
-  class NumberLineIntegersScreenView extends ScreenView {
+  class NLIGenericScreenView extends ScreenView {
 
     /**
      * @param {NumberLineIntegersModel} model
@@ -36,5 +36,5 @@ define( function( require ) {
     }
   }
 
-  return numberLineIntegers.register( 'NumberLineIntegersScreenView', NumberLineIntegersScreenView );
+  return numberLineIntegers.register( 'NLIGenericScreenView', NLIGenericScreenView );
 } );

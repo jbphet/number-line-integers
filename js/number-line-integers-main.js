@@ -11,7 +11,9 @@ define( require => {
   // modules
   const Sim = require( 'JOIST/Sim' );
   const SimLauncher = require( 'JOIST/SimLauncher' );
-  const NumberLineIntegersScreen = require( 'NUMBER_LINE_INTEGERS/number-line-integers/NumberLineIntegersScreen' );
+  const Tandem = require( 'TANDEM/Tandem' );
+  const NLIGenericScreen = require( 'NUMBER_LINE_INTEGERS/generic/NLIGenericScreen' );
+  const NLIScenesScreen = require( 'NUMBER_LINE_INTEGERS/scenes/NLIScenesScreen' );
 
   // strings
   const numberLineIntegersTitleString = require( 'string!NUMBER_LINE_INTEGERS/number-line-integers.title' );
@@ -19,8 +21,8 @@ define( require => {
   const simOptions = {
     credits: {
       //TODO fill in credits, all of these fields are optional, see joist.CreditsNode
-      leadDesign: '',
-      softwareDevelopment: '',
+      leadDesign: 'Amanda McGarry',
+      softwareDevelopment: 'John Blanco, Chris Klusendorf',
       team: '',
       qualityAssurance: '',
       graphicArts: '',
@@ -32,7 +34,11 @@ define( require => {
   // launch the sim - beware that scenery Image nodes created outside of SimLauncher.launch() will have zero bounds
   // until the images are fully loaded, see https://github.com/phetsims/coulombs-law/issues/70
   SimLauncher.launch( () => {
-    const sim = new Sim( numberLineIntegersTitleString, [ new NumberLineIntegersScreen() ], simOptions );
+    const screens = [
+      new NLIScenesScreen( Tandem.rootTandem.createTandem( 'scenesScreen' ) ),
+      new NLIGenericScreen( Tandem.rootTandem.createTandem( 'genericScreen' ) )
+    ];
+    const sim = new Sim( numberLineIntegersTitleString, screens, simOptions );
     sim.start();
   } );
 } );

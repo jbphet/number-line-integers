@@ -12,7 +12,7 @@ define( require => {
   /**
    * @constructor
    */
-  class NumberLineIntegersModel {
+  class NLIScenesModel {
 
     constructor() {
       //TODO
@@ -29,5 +29,5 @@ define( require => {
     }
   }
 
-  return numberLineIntegers.register( 'NumberLineIntegersModel', NumberLineIntegersModel );
+  return numberLineIntegers.register( 'NLIScenesModel', NLIScenesModel );
 } );
