@@ -12,11 +12,15 @@ define( require => {
   const NLIScenesModel = require( 'NUMBER_LINE_INTEGERS/scenes/model/NLIScenesModel' );
   const NLIScenesScreenView = require( 'NUMBER_LINE_INTEGERS/scenes/view/NLIScenesScreenView' );
   const numberLineIntegers = require( 'NUMBER_LINE_INTEGERS/numberLineIntegers' );
+  const RandomIconFactory = require( 'NUMBER_LINE_INTEGERS/RandomIconFactory' );
   const Screen = require( 'JOIST/Screen' );
 
   // strings
   // TODO: Put this in with the strings!!!!!!!!!!!!!
   const scenesString = 'Scenes';
+
+  // TODO: Just for fun
+  const iconFactory = new RandomIconFactory( 158 );
 
   class NLIScenesScreen extends Screen {
 
@@ -27,7 +31,7 @@ define( require => {
 
       const options = {
         name: scenesString,
-        homeScreenIcon: null,
+        homeScreenIcon: iconFactory.createIcon(),
         tandem: tandem
       };
 
