@@ -12,6 +12,7 @@ define( require => {
   const NLIScenesModel = require( 'NUMBER_LINE_INTEGERS/scenes/model/NLIScenesModel' );
   const NLIScenesScreenView = require( 'NUMBER_LINE_INTEGERS/scenes/view/NLIScenesScreenView' );
   const numberLineIntegers = require( 'NUMBER_LINE_INTEGERS/numberLineIntegers' );
+  const Property = require( 'AXON/Property' );
   const RandomIconFactory = require( 'NUMBER_LINE_INTEGERS/RandomIconFactory' );
   const Screen = require( 'JOIST/Screen' );
 
@@ -31,6 +32,7 @@ define( require => {
 
       const options = {
         name: scenesString,
+        backgroundColorProperty: new Property( 'rgb( 254, 247, 233 )' ),
         homeScreenIcon: iconFactory.createIcon(),
         tandem: tandem
       };
